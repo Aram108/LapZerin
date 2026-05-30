@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lap Zerin - Cart & Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Shared Header Injected Here -->
+    <div id="lapzerin-header"></div>
+
+    <!-- ───── CART PAGE LAYOUT ───── -->
+    <section class="cart-page">
+        <div class="container cart-grid">
+
+            <!-- Left Side: Cart Items -->
+            <div>
+                <h2 class="text-gradient" style="margin-bottom: 20px; font-size: 2.5rem;"><i
+                        class="fas fa-shopping-cart"></i> Your Cart</h2>
+                <div class="cart-items-wrapper" id="cart-page-items">
+                    <!-- JS injects cart items here -->
+                </div>
+            </div>
+
+            <!-- Right Side: Order Summary & Form -->
+            <div class="cart-sidebar">
+                <h2 class="text-gradient" style="margin-bottom: 20px; font-size: 1.8rem;" data-key="checkout_title">
+                    Order Overview</h2>
+
+                <div class="checkout-overview" style="background: none; border: none; padding: 0;">
+                    <div class="checkout-row" style="margin-top: 15px;">
+                        <span data-key="co_sub">Subtotal</span>
+                        <strong id="co-subtotal">$0.00</strong>
+                    </div>
+                    <div class="checkout-row">
+                        <span data-key="co_tax">Tax (5%)</span>
+                        <strong id="co-tax">$0.00</strong>
+                    </div>
+                    <div class="checkout-row">
+                        <span data-key="co_delivery"><i class="fas fa-taxi" style="color:var(--gold);"></i> Delivery
+                            (Taxi)</span>
+                        <strong id="co-delivery">$5.00</strong>
+                    </div>
+                    <div class="checkout-row total-row">
+                        <span data-key="co_total">Total</span>
+                        <strong id="co-total" class="text-gradient" style="font-size: 1.5rem;">$0.00</strong>
+                    </div>
+                </div>
+
+                <form class="modal-form" id="checkout-form" style="margin-top: 25px;">
+                    <div class="input-wrap"><i class="fas fa-map-marker-alt"></i><input type="text"
+                            placeholder="Shipping Address" data-key-placeholder="addr_ph" required></div>
+                    <div class="input-wrap"><i class="fas fa-phone"></i><input type="tel" placeholder="Phone Number"
+                            data-key-placeholder="phone_ph" required></div>
+                    <button type="button" class="btn btn-gold modal-submit" data-key="btn_order" onclick="submitOrder()"
+                        style="width: 100%;"><i class="fas fa-check-circle"></i> Confirm Order</button>
+                    <a href="products.html" class="btn "
+                        style="width: 100%; justify-content: center; margin-top: 10px; color: var(--white-60); border: 1px solid var(--white-10); padding: 12px;"><i
+                            class="fas fa-arrow-left"></i> Continue Shopping</a>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Shared Footer Injected Here -->
+    <div id="lapzerin-footer"></div>
+
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
